@@ -1,0 +1,311 @@
+<DOCTYPE html5>
+<html>
+    <head>
+        <title>ECE TO DO</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102743987-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)};
+            gtag('js', new Date());
+            gtag('config', 'UA-102743987-2');
+        </script>
+		<script>
+			$(document).ready(function () {
+                var totalItems = 999;
+                localStorage.setItem(0, "zero");
+				var i = 0;
+				for(i = 0; i < totalItems+1; i++){
+					var ToStrike = 'table#Assignment_Table tr#' + localStorage.getItem(i);
+					$(ToStrike).addClass("strikeout");
+				}
+                
+                if(localStorage.getItem("hidden") == 1){
+                    $('.strikeout').addClass("hidden");
+                    $(".hidebutton").prop("checked", true);
+                }
+                else{
+                    $('.strikeout').removeClass("hidden");
+                    $(".hidebutton").prop("checked", false);
+                }
+				
+				$('.crossbutton').click(function() {
+					var id = $(this).closest("tr").prop('id');
+					localStorage.setItem(id, id);
+                    var ToStrike = 'table#Assignment_Table tr#' + id;
+					$(ToStrike).addClass("strikeout");
+				});
+                
+                $('.clearbutton').click(function() {
+                    localStorage.clear();
+                    location.reload();
+                });
+                
+                $('.hidebutton').change(function() {
+                    if ($(this).is(':checked')) {
+					   $('.strikeout').addClass("hidden");
+                        localStorage.setItem("hidden", 1);
+                    }
+                    else{
+					   $('.strikeout').removeClass("hidden");
+                        localStorage.setItem("hidden", 0);
+                    }
+				});
+				
+			});	
+		</script>
+        <style>
+            table{
+                border-collapse: collapse;
+                border-spacing: 50px 0;
+                width: 500px%;
+                margin-left: auto;
+                padding: 10px 10px;
+                margin-right: auto;
+                border: 1px solid black;
+            }
+            td{
+                padding: 10px 10px;
+                border: 1px solid black;
+            }
+            th{
+                border: 1px solid black;
+                padding: 10px 10px;
+            }
+
+			tr.strikeout{
+				text-decoration: line-through;
+			}
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div style="text-align: center; align-content: center;"><br>
+            <h1 style="align-self: center">ECE Section 1 Assignments</h1>
+        <br>
+
+            <table style="align-self: center;" id="Assignment_Table">
+                <tr id="head">
+                    <th>Course</th>
+                    <th>Assignment</th>
+                    <th>Due Date</th>
+                </tr>
+                <tr id="1">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 117</td>
+                    <td>Assignment 0 (Launchpad)</td>
+                    <td>September 21, 11:59PM</td>
+                </tr>
+                <tr id="2">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 117</td>
+                    <td>Assignment 1 (Launchpad)</td>
+                    <td>September 28, 11:59PM</td>
+                </tr>
+                <tr id="3">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 117</td>
+                    <td>Assignment 1 (Crowdmark)</td>
+                    <td>September 22, 8:30AM</td>
+                </tr>
+                <tr id="4">
+				    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 105</td>
+                    <td>Vector Review Assignment (Learn)</td>
+                    <td>September 22</td>
+                </tr>
+                <tr id="5">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 115</td>
+                    <td>Assignment-Quiz 2 (Learn)</td>
+                    <td>September 25/26</td>
+                </tr>
+                <tr id="6">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 115</td>
+                    <td>Applications Worksheet 2 (Learn)</td>
+                    <td>September 25/26</td>
+                </tr>
+                <tr id="7">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;CHE 102</td>
+                    <td>Assignment 1 (Maple TA)</td>
+                    <td>October 2</td>
+                </tr>
+                <tr id="8">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 150</td>
+                    <td>Prelab 2 (Learn)</td>
+                    <td>Sepember 22, 11:30PM</td>
+                </tr>
+                <tr id="9">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;CFE COOP</td>
+                    <td>Engineering Profession Quiz (Learn)</td>
+                    <td>Sepember 21, 6:00PM</td>
+                </tr>
+                <tr id="10">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 105</td>
+                    <td>Assignment 1 (Learn)</td>
+                    <td>September 25, 11:55 PM</td>
+                </tr>
+                <tr id="11">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 105</td>
+                    <td>Assignment 1 (Webassign)</td>
+                    <td>September 25, 11:55 PM</td>
+                </tr>
+                <tr id="12">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 150</td>
+                    <td>Lab 2</td>
+                    <td>September 25, 10:00 PM</td>
+                </tr>
+                <tr id="13">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 117</td>
+                    <td>Assignment 2 (Launchpad)</td>
+                    <td>September 28, 11:59PM</td>
+                </tr>
+                <tr id="14">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;CFE COOP</td>
+                    <td>Interview Skills Quiz (Learn)</td>
+                    <td>September 27, 7:00PM</td>
+                </tr>
+                <tr id="15">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;CFE COOP</td>
+                    <td>Getting Ready for the Interview Question (Learn)</td>
+                    <td>September 27, 7:00PM</td>
+                </tr>
+                <tr id="16">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;CFE COOP</td>
+                    <td>Practising Interview Responses Question (Learn)</td>
+                    <td>September 27, 7:00PM</td>
+                </tr>
+                <tr id="17">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;CFE COOP</td>
+                    <td>COOP Fundamentals Quiz 1 (Learn)</td>
+                    <td>September 27, 7:00PM</td>
+                </tr>
+                <tr id="18">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 150</td>
+                    <td>A2-EWMA (Marmoset)</td>
+                    <td>September 26, 10:00PM</td>
+                </tr>
+                <tr id="19">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 150</td>
+                    <td>A2-ECBraking (Marmoset)</td>
+                    <td>September 27, 10:00PM</td>
+                </tr>
+                <tr id="20">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 115</td>
+                    <td>Assignment-Quiz 3 (Learn)</td>
+                    <td>October 3/4</td>
+                </tr>
+                <tr id="21">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 115</td>
+                    <td>Applications Worksheet 3 (Learn)</td>
+                    <td>October 3/4</td>
+                </tr>
+                <tr id="22">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 115</td>
+                    <td>Assignment 3 (Maple TA)</td>
+                    <td>October 3/4</td>
+                </tr>
+                <tr id="23">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 117</td>
+                    <td>Assignment 2 (Crowdmark)</td>
+                    <td>September 29, 8:30AM</td>
+                </tr>
+                <tr id="24">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;MATH 117</td>
+                    <td>Assignment 4 (Crowdmark)</td>
+                    <td>October 12, 11:59pm</td>
+                </tr>
+                <tr id="25">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;CHE 102</td>
+                    <td>Assignment 2 (Maple TA)</td>
+                    <td>October 11, 11:59pm</td>
+                </tr>
+                <tr id="26">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 150</td>
+                    <td>Lab 4 (Marmoset)</td>
+                    <td>October 12, 10:00pm</td>
+                </tr>
+                <tr id="27">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 105</td>
+                    <td>Lab 2 (Learn)</td>
+                    <td>October 12, 11:59pm</td>
+                </tr>
+                <tr id="28">
+                    <td><button class="crossbutton">&#10006;</button>&nbsp;ECE 190</td>
+                    <td>Coop Fundamentals Quiz 2 (Learn)</td>
+                    <td>October 13, 7:00pm</td>
+                </tr>
+            </table>
+            <button class="clearbutton">Clear</button>
+            <form action=""><input type="checkbox" class="hidebutton">Hide Finished</form>
+            <p>Last Updated: October 12, 12:05pm</p>
+            <br>
+            <h1 style="align-self: center">ECE Section 1 Upcoming Quizzes</h1>
+            <table style="align-self: center;">
+                <tr>
+                    <th>Course</th>
+                    <th>Quiz</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>MATH 117</td>
+                    <td>MIDTERM</td>
+                    <td>October 16 (2:30pm - 4:20pm)</td>
+                </tr>
+                <tr>
+                    <td>ECE 105</td>
+                    <td>MIDTERM (INDIVIDUAL)</td>
+                    <td>October 17 (5:30pm - 7:50pm)</td>
+                </tr>
+                <tr>
+                    <td>ECE 150</td>
+                    <td>MIDTERM</td>
+                    <td>October 18 (2:30pm - 4:20pm)</td>
+                </tr>
+                <tr>
+                    <td>MATH 115</td>
+                    <td>MIDTERM</td>
+                    <td>October 19 (5:30pm - 7:20pm)</td>
+                </tr>
+                <tr>
+                    <td>CHE 102</td>
+                    <td>MIDTERM</td>
+                    <td>October 20 (6:25pm - 8:10pm)</td>
+                </tr>
+                <tr>
+                    <td>ECE 105</td>
+                    <td>MIDTERM (GROUP)</td>
+                    <td>October 26/27 (TUTORIAL)</td>
+                </tr>
+                <tr>
+                    <td>ECE 105</td>
+                    <td>FINAL</td>
+                    <td>December 12 (4:00pm - 6:30pm)</td>
+                </tr>
+                <tr>
+                    <td>MATH 115</td>
+                    <td>FINAL</td>
+                    <td>December 15 (9:00am - 11:30am)</td>
+                </tr>
+                <tr>
+                    <td>MATH 117</td>
+                    <td>FINAL</td>
+                    <td>December 7 (12:30pm - 3:00pm)</td>
+                </tr>
+                <tr>
+                    <td>ECE 150</td>
+                    <td>FINAL</td>
+                    <td>December 9 (12:30pm - 3:00pm)</td>
+                </tr>
+                <tr>
+                    <td>CHE 102</td>
+                    <td>FINAL</td>
+                    <td>December 19 (9:00am - 11:30am)</td>
+                </tr>
+            </table>
+            <p>Source for Final Schedule: https://uwaterloo.ca/registrar/sites/ca.registrar/files/uploads/files/schedule_58.pdf</p>
+            <br> 
+        </div>
+    </body>
+</html>
