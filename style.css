@@ -1,0 +1,80 @@
+body
+{
+  background-color:#3e3e3e;
+  font-family: 'Barlow', sans-serif;
+  color:aeaeae;
+}
+
+h1
+{
+  font-size:50px;
+  padding-top:50px;
+  text-transform:uppercase;
+}
+
+table, .table, .table td
+{
+  vertical-align:middle;
+  border:none;
+  width:auto;
+  border-collapse: collapse;
+  border-spacing: 50px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.crossbutton
+{
+  border:none;
+  color:#5e5e5e;
+  background:transparent;
+  padding:0px 0px 0px 0px;
+  vertical-align:middle;
+}
+
+.clearbutton, .finishedbutton
+{
+  color:#5e5e5e;
+  border:none;
+  background:transparent;
+}
+
+button:hover
+{
+  color:#ffffff;
+}
+
+#finished
+{
+  padding-top:5px;
+}
+
+td
+{
+  font-size:14px;
+  text-align:center;
+  padding: 10px 10px;
+}
+
+th
+{
+  font-size:18px;
+  text-align:center;
+  padding: 10px 10px;
+}
+
+.clicky
+{
+  padding-right:50px;
+}
+
+tr.strikeout
+{
+  color:#5e5e5e;
+  text-decoration: line-through;
+}
+
+.hidden
+{
+  display: none;
+}
