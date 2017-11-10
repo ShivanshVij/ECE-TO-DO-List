@@ -1,0 +1,32 @@
+table
+{
+  border-collapse: collapse;
+  border-spacing: 50px 0;
+  width: 500px%;
+  margin-left: auto;
+  padding: 10px 10px;
+  margin-right: auto;
+  border: 1px solid black;
+}
+
+td
+{
+  padding: 10px 10px;
+  border: 1px solid black;
+}
+
+th
+{
+  border: 1px solid black;
+  padding: 10px 10px;
+}
+
+tr.strikeout
+{
+  text-decoration: line-through;
+}
+
+.hidden
+{
+  display: none;
+}

@@ -1,88 +1,20 @@
 <DOCTYPE html5>
 <html>
     <head>
-        <title>ECE TO DO</title>
+
+        <!-- This is more of my style -->
+        <title>Sad Reacts Only</title>
+
+        <!-- Misc. Imports that Shiv deemed important I guess -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-        <!-- Global Site Tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102743987-2"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)};
-            gtag('js', new Date());
-            gtag('config', 'UA-102743987-2');
-        </script>
-		<script>
-			$(document).ready(function () {
-                var totalItems = 999;
-                localStorage.setItem(0, "zero");
-				var i = 0;
-				for(i = 0; i < totalItems+1; i++){
-					var ToStrike = 'table#Assignment_Table tr#' + localStorage.getItem(i);
-					$(ToStrike).addClass("strikeout");
-				}
-                
-                if(localStorage.getItem("hidden") == 1){
-                    $('.strikeout').addClass("hidden");
-                    $(".hidebutton").prop("checked", true);
-                }
-                else{
-                    $('.strikeout').removeClass("hidden");
-                    $(".hidebutton").prop("checked", false);
-                }
-				
-				$('.crossbutton').click(function() {
-					var id = $(this).closest("tr").prop('id');
-					localStorage.setItem(id, id);
-                    var ToStrike = 'table#Assignment_Table tr#' + id;
-					$(ToStrike).addClass("strikeout");
-				});
-                
-                $('.clearbutton').click(function() {
-                    localStorage.clear();
-                    location.reload();
-                });
-                
-                $('.hidebutton').change(function() {
-                    if ($(this).is(':checked')) {
-					   $('.strikeout').addClass("hidden");
-                        localStorage.setItem("hidden", 1);
-                    }
-                    else{
-					   $('.strikeout').removeClass("hidden");
-                        localStorage.setItem("hidden", 0);
-                    }
-				});
-				
-			});	
-		</script>
-        <style>
-            table{
-                border-collapse: collapse;
-                border-spacing: 50px 0;
-                width: 500px%;
-                margin-left: auto;
-                padding: 10px 10px;
-                margin-right: auto;
-                border: 1px solid black;
-            }
-            td{
-                padding: 10px 10px;
-                border: 1px solid black;
-            }
-            th{
-                border: 1px solid black;
-                padding: 10px 10px;
-            }
 
-			tr.strikeout{
-				text-decoration: line-through;
-			}
-            .hidden {
-                display: none;
-            }
-        </style>
+        <!-- Moved the javascript and the css into seperate files for better readability -->
+        <script type="text/javascript" src = "script.js"></script>
+        <link rel="stylesheet" href="style.css">
+
     </head>
 
     <body>
@@ -305,7 +237,7 @@
                 </tr>
             </table>
             <p>Source for Final Schedule: https://uwaterloo.ca/registrar/sites/ca.registrar/files/uploads/files/schedule_58.pdf</p>
-            <br> 
+            <br>
         </div>
     </body>
 </html>
