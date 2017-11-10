@@ -9,6 +9,9 @@ gtag('config', 'UA-102743987-2');
 $(document).ready(function ()
 {
 
+  // A boolean to determine whether finished things are stored
+  var x = true;
+
   var totalItems = 999;
   localStorage.setItem(0, "zero");
   var i = 0;
@@ -33,7 +36,6 @@ $(document).ready(function ()
 
   $('.crossbutton').click(function()
   {
-
     var id = $(this).closest("tr").prop('id');
     localStorage.setItem(id, id);
     var ToStrike = 'table#Assignment_Table tr#' + id;
