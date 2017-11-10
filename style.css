@@ -29,11 +29,12 @@ table, .table, .table td
   color:#5e5e5e;
   background:transparent;
   padding:0px 0px 0px 0px;
+  vertical-align:middle;
 }
 
-.clearbutton
+.clearbutton, .finishedbutton
 {
-  color:inherit;
+  color:#5e5e5e;
   border:none;
   background:transparent;
 }
@@ -41,7 +42,6 @@ table, .table, .table td
 button:hover
 {
   color:#ffffff;
-  vertical-align:middle;
 }
 
 #finished

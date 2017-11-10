@@ -48,9 +48,9 @@ $(document).ready(function ()
     location.reload();
   });
 
-  $('.hidebutton').change(function()
+  $('.finishedbutton').click(function()
   {
-    if ($(this).is(':checked'))
+    if (x == true)
     {
       $('.strikeout').addClass("hidden");
       localStorage.setItem("hidden", 1);
